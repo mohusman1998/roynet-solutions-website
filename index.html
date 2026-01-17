@@ -3,41 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roynet Solutions – Onsite IT Support Hungary & EU</title>
+    <title>Roynet Solutions – Onsite IT Support in Hungary</title>
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+        }
+
+        body {
             font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
         }
-        img {
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Layout */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #ffffffee;
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #222;
+        }
+
+        .nav-right a {
+            margin-left: 16px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .nav-right a:hover {
+            color: #0078ff;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+
+        section {
+            margin: 40px 0;
+        }
+
+        /* Hero */
+
+        .hero {
+            width: 100vw;
+            margin-left: calc(50% - 50vw); /* full-bleed */
+            margin-right: calc(50% - 50vw);
+            height: 80vh;
+            background: url('assets/hero.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-inner {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px 24px;
+            border-radius: 14px;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 2.4rem;
+            margin-bottom: 14px;
+        }
+
+        .hero p {
+            color: #f0f0f0;
+            font-size: 1.1rem;
+            margin-bottom: 22px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #0078ff;
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .hero-cta:hover {
+            background: #005fcc;
+        }
+
+        /* Generic section styling */
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: #222;
+            text-align: left;
+        }
+
+        .section-text {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .section-with-image {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 24px;
+            align-items: center;
+        }
+
+        .section-with-image img {
             width: 100%;
-            height: auto;
-            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
         }
+
+        /* Services */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #222;
+        }
+
+        .service-card p {
+            font-size: 0.98rem;
+            color: #555;
+        }
+
+        /* Why choose us */
+
+        .why-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .why-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .why-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0078ff;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+
+        .contact-box a {
+            color: #0078ff;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #555;
+            padding: 18px 10px 26px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-with-image {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-right {
+                display: none; /* keep it simple for now */
+            }
+
+            main {
+                padding: 0 16px 32px;
+            }
         }
     </style>
 </head>
-
 <body>
 
-    <img src="assets/hero.jpg" alt="Roynet Solutions Hero Section">
-    <img src="assets/who_we_are.jpg" alt="About Roynet Solutions">
-    <img src="assets/services_core.jpg" alt="Core IT Field Services">
-    <img src="assets/services_extended.jpg" alt="Extended and Specialized Services">
-    <img src="assets/coverage.jpg" alt="Coverage Across Hungary and EU">
-    <img src="assets/why_choose_us.jpg" alt="Reasons to Choose Roynet Solutions">
-    <img src="assets/contact.jpg" alt="Contact Roynet Solutions">
+<header>
+    <div class="nav">
+        <div class="nav-left">Roynet Solutions</div>
+        <div class="nav-right">
+            <a href="#who-we-are">Who We Are</a>
+            <a href="#services">Services</a>
+            <a href="#coverage">Coverage</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</header>
 
-    <footer>
-        © 2025 Roynet Solutions – Onsite IT Support Across Hungary & EU
-    </footer>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <h1>Onsite IT Support Across Hungary</h1>
+        <p>
+            Field services for global MSPs: IMACD, dispatch, Wi‑Fi surveys, structured cabling, and L1/L2 onsite support —
+            delivered with local expertise and international standards.
+        </p>
+        <a href="#contact" class="hero-cta">Contact Roynet Solutions</a>
+    </div>
+</section>
+
+<main>
+
+    <!-- WHO WE ARE -->
+    <section id="who-we-are">
+        <div class="section-with-image">
+            <div>
+                <h2 class="section-title">Who We Are</h2>
+                <p class="section-text">
+                    Roynet Solutions is a Hungary‑based onsite IT partner for global managed service providers.
+                    We act as your hands and eyes on the ground, delivering reliable field services across the country.
+                </p>
+                <p class="section-text">
+                    From end‑user support to infrastructure work, we understand MSP expectations:
+                    clear communication, precise execution, and professional onsite presence.
+                </p>
+            </div>
+            <div>
+                <img src="assets/who_we_are.jpg" alt="Roynet Solutions team and onsite IT work">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <h2 class="section-title">Core Services</h2>
+        <p class="section-text">
+            We support MSPs with consistent, repeatable onsite services across Hungary — from single tickets to multi‑site rollouts.
+        </p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>IMACD</h3>
+                <p>Install, Move, Add, Change, Decommission for end‑user devices, peripherals, and small infrastructure.</p>
+            </div>
+            <div class="service-card">
+                <h3>Onsite Dispatch</h3>
+                <p>Technicians dispatched to client sites for break/fix, troubleshooting, and hands‑and‑eyes support.</p>
+            </div>
+            <div class="service-card">
+                <h3>Wi‑Fi & Site Surveys</h3>
+                <p>Basic Wi‑Fi checks, AP swaps, and on‑site observations to support your remote network engineers.</p>
+            </div>
+            <div class="service-card">
+                <h3>Structured Cabling</h3>
+                <p>Small‑scale cabling, patching, labeling, and tidy‑up work in offices and branch locations.</p>
+            </div>
+            <div class="service-card">
+                <h3>L1/L2 Field Support</h3>
+                <p>End‑user assistance, hardware swaps, basic network tasks, and coordination with your remote team.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 26px;">
+            <img src="assets/services_core.jpg" alt="Core IT field services overview" style="width:100%; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.12);">
+        </div>
+
+        <div style="margin-top: 26px;">
+            <img src="assets/services_extended.jpg" alt="Extended IT services and capabilities" style="width:100%; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.12);">
+        </div>
+    </section>
+
+    <!-- COVERAGE -->
+    <section id="coverage">
+        <div class="section-with-image">
+            <div>
+                <h2 class="section-title">Coverage Across Hungary</h2>
+                <p class="section-text">
+                    Based in Hungary, we cover major cities and regional locations, supporting MSPs with predictable onsite response.
+                </p>
+                <p class="section-text">
+                    Whether it’s a single user in a remote town or a multi‑site rollout across several branches,
+                    we coordinate locally and communicate clearly with your service desk or project team.
+                </p>
+            </div>
+            <div>
+                <img src="assets/coverage.jpg" alt="Map and coverage of Roynet Solutions in Hungary">
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us">
+        <div class="section-with-image">
+            <div>
+                <h2 class="section-title">Why MSPs Choose Roynet</h2>
+                <p class="section-text">
+                    We understand that your reputation is on the line with every onsite visit. Our role is to protect it.
+                </p>
+                <ul class="why-list">
+                    <li>Local, Hungary‑based presence with English communication.</li>
+                    <li>Experience working as a field extension of global MSPs.</li>
+                    <li>Clear updates, photos, and documentation from site.</li>
+                    <li>Professional onsite behavior with end‑customers.</li>
+                    <li>Flexible engagement — from ad‑hoc tickets to ongoing support.</li>
+                </ul>
+            </div>
+            <div>
+                <img src="assets/why_choose_us.jpg" alt="Reasons MSPs choose Roynet Solutions">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="section-with-image">
+            <div class="contact-box">
+                <p>
+                    If you’re an MSP looking for a reliable onsite partner in Hungary, we’d be happy to connect.
+                </p>
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:info@roynet-solutions.com">info@roynet-solutions.com</a>
+                </p>
+                <p>
+                    <strong>Subject suggestion:</strong><br>
+                    “Onsite IT Support Partner in Hungary – Roynet Solutions”
+                </p>
+                <p>
+                    Share your standard field requirements, SLAs, and onboarding process — we’ll align with your way of working.
+                </p>
+            </div>
+            <div>
+                <img src="assets/contact.jpg" alt="Contact Roynet Solutions" style="width:100%; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.12);">
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2025 Roynet Solutions – Onsite IT Support Across Hungary
+</footer>
 
 </body>
 </html>
